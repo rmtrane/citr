@@ -612,7 +612,7 @@ insert_citation <- function(
 
         # Insert citation
         if(!(current_key() %in% c("[@]", "@"))) {
-          rstudioapi::insertText(text = current_key(), id = context$id)
+          rstudioapi::insertText(location = context$selection[[1]]$range, text = current_key(), id = context$id)
         }
         invisible(stopApp())
       }
